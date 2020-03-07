@@ -1,11 +1,12 @@
 # BOLDLagMapping
 
-contact: Toshihiko ASO aso.toshihiko@gmail.com
+contact: Toshihiko ASO aso.toshihiko@gmail.com / https://www.researchgate.net/profile/Toshihiko_Aso
 
 ## Extraction and removal of the time-lag structure within 4D blood oxygenation level dependent (BOLD) signal MRI data
 
 ![lagmaps](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/LagMaps.jpg)
 ![lagmap_anim](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/lagmap_anim.gif)
+![sLFO_anim](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/Lag_model_anim100.gif)
 
 ### Dependencies
 For Linux/Mac. MATLAB scripts call [FSL][] commands and [SPM12] functions. 
@@ -88,5 +89,4 @@ Recursive tracking
 Fixed-seed tracking
 
 [Satow, T., Aso, T., Nishida, S., Komuro, T., Ueno, T., Oishi, N., … Fukuyama, H. (2017). Alteration of venous drainage route in idiopathic normal pressure hydrocephalus and normal aging. Frontiers in Aging Neuroscience, 9(NOV), 1–10.](https://doi.org/10.3389/fnagi.2017.00387)
-
 
