@@ -16,7 +16,7 @@ Install FSL & MATLAB then evoke MATLAB from the shell.
 [FSL]: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki "FSL"
 [SPM12]: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
 
-### Usage
+### See Releases for usage
 
 **drLag4D** for tracking and **drDeperf** for deperfusioning.
 **Einsteining** is the pipeline script.
