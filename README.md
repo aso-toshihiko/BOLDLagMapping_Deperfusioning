@@ -1,18 +1,16 @@
 # BOLDLagMapping
 
-## for HCP-type data, visit:
-## https://github.com/RIKEN-BCIL/HCPstyle-BOLDLagMappingAndCleaning
-
 contact: Toshihiko ASO aso.toshihiko@gmail.com / https://www.researchgate.net/profile/Toshihiko_Aso
 
-## Extraction and removal of the time-lag structure within 4D blood oxygenation level dependent (BOLD) signal MRI data
+## Extraction and removal of the sLFO with its time-lag structure in 4D blood oxygenation level dependent (BOLD) signal MRI data
 
 ![lagmaps](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/LagMaps.jpg)
 ![lagmap_anim](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/lagmap_anim.gif)
 ![sLFO_anim](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/Lag_model_anim100.gif)
 
 ### Dependencies
-For Linux/Mac. MATLAB scripts call [FSL][] commands and [SPM12] functions. 
+For Linux/Mac. MATLAB scripts call [FSL][] commands and [SPM12] functions.
+FSL6 + niimath or FSL5's fslmaths needed for resampling in "Einsteining" scripts.
 Install FSL & MATLAB then evoke MATLAB from the shell.
 
 [FSL]: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki "FSL"
@@ -20,8 +18,8 @@ Install FSL & MATLAB then evoke MATLAB from the shell.
 
 ### Usage
 
-**drLag4D.m** for tracking and **drDeperf.m** for deperfusioning.
-
+**drLag4D** for tracking and **drDeperf** for deperfusioning.
+**Einsteining** is the pipeline script.
 
 #### dir = drLag4D( name, TR, vols, PosiMax, THR, FIXED, range) ####
 
@@ -90,6 +88,8 @@ Recursive tracking
 [Aso, T., Jiang, G., Urayama, S. I., & Fukuyama, H. (2017). A resilient, non-neuronal source of the spatiotemporal lag structure detected by bold signal-based blood flow tracking. Frontiers in Neuroscience, 11(MAY), 1-13.](https://doi.org/10.3389/fnins.2017.00256)
 
 Fixed-seed tracking
+
+[Aso, T., Sugihara, G., Murai, T., Ubukata, S., Urayama, S., Ueno, T., Fujimoto, G., Thuy, D., Fukuyama, H., & Ueda, K. (2020). A venous mechanism of ventriculomegaly shared between traumatic brain injury and normal ageing. Brain, 143(JUN)](https://doi.org/10.1093/brain/awaa125)
 
 [Satow, T., Aso, T., Nishida, S., Komuro, T., Ueno, T., Oishi, N., … Fukuyama, H. (2017). Alteration of venous drainage route in idiopathic normal pressure hydrocephalus and normal aging. Frontiers in Aging Neuroscience, 9(NOV), 1–10.](https://doi.org/10.3389/fnagi.2017.00387)
 
