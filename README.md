@@ -1,5 +1,6 @@
 # BOLDLagMapping
 
+### See Releases for the scripts
 contact: Toshihiko ASO aso.toshihiko@gmail.com / https://www.researchgate.net/profile/Toshihiko_Aso
 
 ## Extraction and removal of the sLFO with its time-lag structure in 4D blood oxygenation level dependent (BOLD) signal MRI data
