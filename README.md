@@ -21,58 +21,6 @@ Install FSL & MATLAB then evoke MATLAB from the shell.
 **drLag4D** for tracking and **drDeperf** for deperfusioning.
 **Einsteining** is the pipeline script.
 
-#### dir = drLag4D( name, TR, vols, PosiMax, THR, FIXED, range) ####
-
-- A result directory will be created in the current directory
-- Images are expected to have been slice-timing corrected, realigned, and spatially normalized to the MNI space. This normalization is required solely for masking out non-cerebral tissues when extracting the global signal. On computers with RAM < 16GB, reslice the images to 4 mm voxel size to safely run the script. The longer you scan, the better (>10 min). Avoid fast and large head motion that creates signal deflection.
-- Spatial smoothing by 8 mm FWHM is applied in the script, under the assumption of smooth perfusion lag structure (in comparison to the neuronal activity confined to the gray matter). This parameter is subject to change if you assume otherwise, but can result in removal of neurovascular coupling during the "deperfusioning" treatment based on this procedure (Aso 2019; Erdoğan 2016 Front Human Neurosci).
-
-- Options
-
-	name: String to be added to the result directory name (dir)
-
-	TR: Repetition time in second.
-
-	vols: Specify single 4D BOLD data file to process.
-
-	PosiMax: Determines tracking range -PosiMax - +PosiMax. 
-
-		Note this parameter affects the bandpass filter. 
-
-	THR: Minimum height of the valid cross-correlogram peak for lag mapping
-
-	FIXED: Specify tracking method. 
-	
-		0 = recursive tracking, nonzero = fixed seed tracking
-
-	range: Range of the fourth dimension (time) of the 4D data to be used.
-
-		ex. 1:500 - use first 500 volumes
-
-		ex. 1:2:500 - "decimate" to see the effect of sampling rate (see Aso 2017; double the TR for this)
-
-
-#### drDeperf( vols, Lag, TR, reso, range) ####
-
-	vols: fMRI 4D file. Can be relative path assuming lag map folder is in the same folder.
-
-	Lag: Full path to the lag map. Typically
-		'/XXX/XXX/Lag_XXs_thrX_XX/LagMap.nii'. In case you had downsampled the
-		fMRI data to say 4 mm voxel size from 2 mm for example,  
-		for quick and safe lag mapping, 
-		the map must be upsampled (= resliced to the original space) beforehand. 
-		If it was done on SPM, it would be like: '/XXX/XXX/Lag_XXs_thrX_XX/rLagMap.nii'
-
-	TR: Repetition time in second.
-
-	Below are non-compulsory options
-	
-	reso: Lag resolution in second (set to 1 by default)
-
-	range: Specify fourth dimension (time) of the Seeds.mat data to be
-		used. This is only necessary when lag map was created using
-		concatenated runs, but the deperfusioning must be done for each
-		run. Causes	error or unfavorable phase shift depending on the combination of TR and reso.
 ![smoothnoisestructure](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Hybrid_image_decomposition.jpg/256px-Hybrid_image_decomposition.jpg)
 
 BOLD deperfusioning is extracting Einstein (neurovascular coupling) by removing Marilyn Monroe (perfusion structure) from this image.
