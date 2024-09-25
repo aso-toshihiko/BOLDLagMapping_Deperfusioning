@@ -21,7 +21,7 @@ CC is a 3-dimensional matrix 1 x number of voxels x lag, so we find the maximum 
 
 There are dozens of regressors for removing sLFOs, like “regressor of a group of voxels whose lag is -6TR”. At first I tried to use the average time course of these voxels. But the smaller the voxel group of the lag, the further away from whole-brain variability. Sometimes the task response comes in, and the SN simply drops with small number of voxels.
 For this reason, we take the safe approach of “removing the sLFO used to track that lag”. We regress out a time-shifted version of the first sLFO for each region. The next safest thing to do is to use the sLFO obtained during the "recursive lag tracking" where sLFO is updated in each step, but it has a problem similar to the above.
-Since the sLFOs are distributed throughout the brain with various phases, their weighted average accounts for (a significant portion of) the low-frequency component of the whole-brain signal. However, if we regress that whole brain signal, the correlation structure due to phase differences remains. This is why it is better to remove them.
+Since the sLFOs are distributed throughout the brain with various phases, their weighted average accounts for (a significant portion of) the low-frequency component of the whole-brain signal. However, if we regress that whole brain signal uniformly from all voxels, the correlation structure due to phase differences remains. This is why we need "deperfusioning".
 
 （最後に日本語あり）
 
