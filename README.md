@@ -1,6 +1,8 @@
 # BOLDLagMapping
 
-## Introduction to lag mapping
+## Extraction and removal of the sLFO with its time-lag structure in 4D blood oxygenation level dependent (BOLD) signal MRI data
+
+### Introduction to lag mapping
 ```
 Lim = 2;
 YY = [];
@@ -27,8 +29,6 @@ Since the sLFOs are distributed throughout the brain with various phases, their 
 
 ### See Releases for the scripts
 contact: Toshihiko ASO aso.toshihiko@gmail.com / https://www.researchgate.net/profile/Toshihiko_Aso
-
-## Extraction and removal of the sLFO with its time-lag structure in 4D blood oxygenation level dependent (BOLD) signal MRI data
 
 ![lagmaps](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/LagMaps.jpg)
 ![lagmap_anim](https://github.com/RIKEN-BCIL/BOLDLagMapping/blob/master/lagmap_anim.gif)
