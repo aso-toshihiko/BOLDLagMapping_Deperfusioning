@@ -68,7 +68,8 @@ Fixed-seed tracking
 
 [Satow, T., Aso, T., Nishida, S., Komuro, T., Ueno, T., Oishi, N., … Fukuyama, H. (2017). Alteration of venous drainage route in idiopathic normal pressure hydrocephalus and normal aging. Frontiers in Aging Neuroscience, 9(NOV), 1–10.](https://doi.org/10.3389/fnagi.2017.00387)
 
-これは最初のsLFOを作る部分です。Yは縦が時間、横が全ボクセルの2次元にした元データです。
+
+下記は最初のsLFOを作る部分です。Yは縦が時間、横が全ボクセルの2次元にした元データです。
 ここからYYという3次元データを作り、この三次元目がラグになります。要するに縦（時間）が一個ずつズレていくだけです。
 Seedは、この段階では全脳信号です。YYと相関を計算するために同じサイズの行列にrepmatで増やし、CCが相関になります。
 CCは縦が１，横がボクセル数、三次元目がラグの3次元行列なので3次元目方向に最大値（下ではR）を求め、どこで最大になるか（下では変数I）がラグ値になります。
